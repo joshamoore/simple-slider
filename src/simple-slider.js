@@ -1,7 +1,7 @@
 var images = new Array();
 
 //Add your images here
-//Image source must be in the img/ directory
+//Image source default is img directory
 images[0] = "image_01.jpg";
 images[1] = "image_02.jpg";
 images[2] = "image_03.jpg";
@@ -10,13 +10,15 @@ images[4] = "image_05.jpg";
 
 //Time in Seconds
 var time = 3;
+//Image directory - Default is img
+var dir = '';
 
 var current = 0;
 var first = 0;
 var last = images.length-1;
 
 window.onload = function() {
-	document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + images[current] + "' >";
+	document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + dir + images[current] + "' >";
 }
 
 function previous() {
@@ -41,7 +43,7 @@ function next() {
 
 function show() {
 	//This just changes the image
-	document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + images[current] + "' >";
+	document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + dir + images[current] + "' >";
 }
 
 var counter = setInterval(timer, (time * 1000)); //1000 will  run it every 1 second
@@ -50,10 +52,10 @@ function timer()
 {
 	if (current < last) {
 		current++;
-		document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + images[current] + "' >";
+		document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + dir + images[current] + "' >";
 	}
 	else {
 		current = first;
-		document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + images[current] + "' >";
+		document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + dir + images[current] + "' >";
 	}
 }0;
