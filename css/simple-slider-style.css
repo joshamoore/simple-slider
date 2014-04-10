@@ -1,0 +1,42 @@
+#simple-slider-wrap {
+	height: 540px;
+	width: auto;
+	overflow: hidden;
+}
+
+#simple-slider {
+	width: 1216px;
+	height: 540px;
+	margin: auto;
+	overflow: hidden;
+}
+#simple-slider-left {
+	margin-top: 206px;
+	position: relative;
+	width: 128px;
+	height: 128px;
+	float: left;
+}
+
+#simple-slider-center {
+	width: 960px;
+	height: 540px;
+	float: left;
+}
+
+#simple-slider-right {
+	margin-top: 206px;
+	position: relative;
+	width: 128px;
+	height: 128px;
+	float: left;
+}
+.swappers{
+    position:absolute;
+    width:960px;
+    height:540px;
+}
+
+#currentimg{
+    z-index:999;
+}
