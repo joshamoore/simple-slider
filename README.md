@@ -1,7 +1,29 @@
 simple-slider
-=============
+=========
+-----------
+simple-slider is a simple and easy to use JavaScript image slide show.
 
-To use:
- * Add all images to img directory
- * Modify src/simple-slider.js
- * For each image add new element in array at top
+  - Add as many images as you want
+  - Set time for auto play
+  - Easy to style
+
+Version
+----
+
+1.0
+
+Tech
+-----------
+
+simple-slider uses:
+
+* [jQuery]
+* [Button Icons]
+
+License
+----
+
+MIT
+
+[jQuery]:http://jquery.com
+[Button Icons]:http://sekkyumu.deviantart.com/

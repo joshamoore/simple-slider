@@ -21,8 +21,15 @@ var first = 0;
 var last = images.length-1;
 
 window.onload = function() {
+	preload(images);
 	show();
 	updateButtons();
+}
+
+function preload(arrayOfImages) {
+    $.each(arrayOfImages, function(index, image){
+        $('<img/>')[0].src = 'img/' + dir + image;
+    });
 }
 
 function previous() {
@@ -75,9 +82,9 @@ function updateButtons() {
 	var button_list = '';
 	for (var i = 0; i <= last; i++) {
 		if (current==i)
-			button_list += ' <span onclick="goto(' + i + ')"><b>[BTN]</b></span> ';
+			button_list += ' <img src="img/buttons/green.png" onclick="goto(' + i + ')"> ';
 		else
-			button_list += ' <span onclick="goto(' + i + ')">[BTN]</span> ';
+			button_list += ' <img src="img/buttons/grey.png" onclick="goto(' + i + ')">  ';
 	}
 	document.getElementById("simple-slider-buttons").innerHTML = button_list;
 }
