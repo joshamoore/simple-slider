@@ -32,7 +32,7 @@ function preload(arrayOfImages) {
     });
 }
 
-function previous() {
+function previous_image() {
 	if (current > 0) {
 		current--;
 	}
@@ -44,7 +44,7 @@ function previous() {
 	show();
 }
 
-function next() {
+function next_image() {
 	if (current < last) {
 		current++;
 	}
