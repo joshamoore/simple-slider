@@ -78,7 +78,6 @@ function updateButtons() {
 			button_list += ' <span onclick="goto(' + i + ')"><b>[BTN]</b></span> ';
 		else
 			button_list += ' <span onclick="goto(' + i + ')">[BTN]</span> ';
-		console.log('printed: '+i);
 	}
 	document.getElementById("simple-slider-buttons").innerHTML = button_list;
 }
