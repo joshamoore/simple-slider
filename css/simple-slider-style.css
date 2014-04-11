@@ -31,12 +31,3 @@
 	height: 128px;
 	float: left;
 }
-.swappers{
-    position:absolute;
-    width:960px;
-    height:540px;
-}
-
-#currentimg{
-    z-index:999;
-}
