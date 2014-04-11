@@ -22,6 +22,7 @@ var last = images.length-1;
 
 window.onload = function() {
 	show();
+	showButtons();
 }
 
 function previous() {
@@ -31,6 +32,7 @@ function previous() {
 	else {
 		current = last;
 	}
+	updateButtons()
 	resetTimer();
 	show();
 }
@@ -42,18 +44,55 @@ function next() {
 	else {
 		current = first;
 	}
+	updateButtons()
 	resetTimer();
 	show();
 }
 
 function show() {
-	if (none)
+	if (none) {
 		document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + dir + images[current] + "' >";
+		updateButtons()
+	}
 	else if (fade) {
 		$('#next').attr("src","img/" + dir + images[current]).hide().fadeIn('slow');
+		updateButtons()
 	}
 	else
 		alert('Select a transition');
+}
+
+function goto(image_num) {
+	current = image_num;
+	updateButtons()
+	resetTimer();
+	show();
+}
+
+//This function displays the active button
+function updateButtons() {
+	//Reprints the button list, with the active button highlighted
+	var button_list = '';
+	for (var i = 0; i <= last; i++) {
+		if (current==i)
+			button_list += ' <span onclick="goto(' + i + ')"><b>[BTN]</b></span> ';
+		else
+			button_list += ' <span onclick="goto(' + i + ')">[BTN]</span> ';
+		console.log('printed: '+i);
+	}
+	document.getElementById("simple-slider-buttons").innerHTML = button_list;
+}
+
+//This function just prints out the buttons
+function showButtons() {
+	var button_list = '';
+	for (var i = 0; i <= last; i++) {
+		if (current==i)
+			button_list += ' <span onclick="goto(' + i + ')"><b>[BTN]</b></span> ';
+		else
+			button_list += ' <span onclick="goto(' + i + ')">[BTN]</span> ';
+	}
+	document.getElementById("simple-slider-buttons").innerHTML = button_list;
 }
 
 function resetTimer() {
