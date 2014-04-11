@@ -18,7 +18,7 @@ var first = 0;
 var last = images.length-1;
 
 window.onload = function() {
-	document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + dir + images[current] + "' >";
+	show();
 }
 
 function previous() {
@@ -52,10 +52,10 @@ function timer()
 {
 	if (current < last) {
 		current++;
-		document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + dir + images[current] + "' >";
+		show();
 	}
 	else {
 		current = first;
-		document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + dir + images[current] + "' >";
+		show();
 	}
 }0;
