@@ -1,6 +1,6 @@
 simple-slider
 =========
------------
+
 simple-slider is a simple and easy to use JavaScript image slide show.
 
   - Add as many images as you want
