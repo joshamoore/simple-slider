@@ -12,6 +12,9 @@ images[4] = "image_05.jpg";
 var time = 3;
 //Image directory - Default is img
 var dir = '';
+//Set one transition to true
+var none = true;
+var fade = false;
 
 var current = 0;
 var first = 0;
@@ -43,7 +46,12 @@ function next() {
 
 function show() {
 	//This just changes the image
-	document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + dir + images[current] + "' >";
+	if (none)
+		document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + dir + images[current] + "' >";
+	else if (fade)
+		$('#next').attr("src","img/" + dir + images[current]).hide().fadeIn('slow');
+	else
+		alert('Select a transition');
 }
 
 var counter = setInterval(timer, (time * 1000)); //1000 will  run it every 1 second
