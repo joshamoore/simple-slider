@@ -31,6 +31,7 @@ function previous() {
 	else {
 		current = last;
 	}
+	resetTimer();
 	show();
 }
 
@@ -41,23 +42,28 @@ function next() {
 	else {
 		current = first;
 	}
+	resetTimer();
 	show();
 }
 
 function show() {
-	//This just changes the image
 	if (none)
 		document.getElementById("simple-slider-center").innerHTML = "<img src='img/" + dir + images[current] + "' >";
-	else if (fade)
+	else if (fade) {
 		$('#next').attr("src","img/" + dir + images[current]).hide().fadeIn('slow');
+	}
 	else
 		alert('Select a transition');
 }
 
+function resetTimer() {
+	clearInterval(counter);
+	counter = setInterval(timer, (time * 1000));
+}
+
 var counter = setInterval(timer, (time * 1000)); //1000 will  run it every 1 second
 
-function timer()
-{
+function timer() {
 	if (current < last) {
 		current++;
 		show();
