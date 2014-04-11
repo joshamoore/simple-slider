@@ -22,7 +22,7 @@ var last = images.length-1;
 
 window.onload = function() {
 	show();
-	showButtons();
+	updateButtons();
 }
 
 function previous() {
@@ -72,18 +72,6 @@ function goto(image_num) {
 //This function displays the active button
 function updateButtons() {
 	//Reprints the button list, with the active button highlighted
-	var button_list = '';
-	for (var i = 0; i <= last; i++) {
-		if (current==i)
-			button_list += ' <span onclick="goto(' + i + ')"><b>[BTN]</b></span> ';
-		else
-			button_list += ' <span onclick="goto(' + i + ')">[BTN]</span> ';
-	}
-	document.getElementById("simple-slider-buttons").innerHTML = button_list;
-}
-
-//This function just prints out the buttons
-function showButtons() {
 	var button_list = '';
 	for (var i = 0; i <= last; i++) {
 		if (current==i)
